@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
   phone;
   sections = [];
 
-  update(user) {
+  update() {
     this.service.updateUser({username:this.username,
     email:this.email,
     firstName:this.firstName,
