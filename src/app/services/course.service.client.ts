@@ -1,5 +1,5 @@
 export class CourseServiceClient {
-  COURSE_URL = 'http://assignment5-springboot.herokuapp.com/api/course';
+  COURSE_URL = 'https://assignment5-springboot.herokuapp.com/api/course';
   findAllCourses() {
     return fetch(this.COURSE_URL)
       .then(response => response.json());
