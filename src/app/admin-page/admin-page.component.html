@@ -1,0 +1,36 @@
+<div class="container-fluid row">
+  <div class="col-5">
+    <ul class="list-group">
+      <li class="list-group-item active">Courses</li>
+      <li [ngClass]="{'active': course.id == courseId}" (click)="courseSelected(course.id)" *ngFor="let course of courses"
+          class="list-group-item wbdv">
+        {{course.title}}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-7">
+  <h1>Sections for course: {{courseName}}</h1>
+  <div *ngIf="courseId!=='0'">
+    <input [(ngModel)]="sectionName"
+           value="{{sectionName}}"
+           class="form-control">
+    <input [(ngModel)]="seats"
+           placeholder="Seats available"
+           class="form-control">
+    <button (click)="createSection()" class="btn btn-success btn-block">
+      Add Section
+    </button>
+  </div>
+  <a routerLink="/home">Home</a>
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item" (click)="clicked(section)">
+      {{section.name}} {{section.seats}}
+      <button  (click)="delete(section._id)"
+              class="float-right btn btn-primary">Delete</button>
+      <button  (click)="update(section)"
+              class="float-right btn btn-primary">Update</button>
+    </li>
+  </ul>
+  </div>
+</div>

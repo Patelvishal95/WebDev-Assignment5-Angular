@@ -1,0 +1,11 @@
+.card {
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.color2 {
+  background-color: #2f2f2f;
+}
+.smoothEdges{
+  border-radius: 10px;
+  padding: 5px;
+}

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row color1">
+    <h1 class="text-white m-3">
+      Login
+    </h1>
+    <div class="btn-group mt-3 mb-3 align-items-end align-baseline color1">
+      <a routerLink="/register" class="btn  ">Register</a>
+      <a routerLink="/home" class="btn  ">Home</a>
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-2">
+      <label>Username:</label></div>
+    <div class="flex-fill"><input [(ngModel)]="username"
+         placeholder="Username"
+         class="form-control"/></div>
+  </div>
+  <div class="row m-2">
+    <div class="col-2">
+      <label>Password:</label></div>
+      <div class="flex-fill"><input [(ngModel)]="password"
+         placeholder="Password"
+         class="form-control"/></div>
+    </div>
+  <button (click)="login(username, password)"
+          class="btn btn-primary btn-block">
+    Login
+  </button>
+
+
+</div>

@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row color1">
+    <h1 class="text-white m-3">
+      Profile
+    </h1>
+    <div class="btn-group mt-3 mb-3 align-items-end align-baseline color1">
+      <a (click)="logout()" class="btn  "
+         routerLink="/home" >Logout</a>
+      <a routerLink="/home" class="btn">Home</a>
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-2">
+      <label >Username:</label></div>
+    <div class="flex-fill">
+      <input [(ngModel)]="username"
+             placeholder="username"
+             class="form-control"/></div>
+  </div>
+  <div class="row m-2">
+    <div class="col-2">
+      <label>First Name:</label></div>
+    <div class="flex-fill"><input [(ngModel)]="firstName"
+                                  placeholder="first name"
+                                  class="form-control"/></div>
+  </div>
+    <div class="row m-2">
+      <div class="col-2">
+        <label>Last Name:</label></div>
+      <div class="flex-fill"><input [(ngModel)]="lastName"
+                                    placeholder="lastName"
+                                    class="form-control"/></div></div>
+      <div class="row m-2">
+        <div class="col-2">
+          <label>Email:</label></div>
+        <div class="flex-fill"><input [(ngModel)]="email"
+                                      placeholder="email"
+                                      class="form-control"/></div></div>
+        <div class="row m-2">
+          <div class="col-2">
+            <label>Phone:</label></div>
+          <div class="flex-fill"><input [(ngModel)]="phone"
+                                        placeholder="phone"
+                                        class="form-control"/></div></div>
+          <div class="row m-2">
+            <div class="col-2">
+              <label>Address:</label></div>
+            <div class="flex-fill"><input [(ngModel)]="address"
+                                          placeholder="address"
+                                          class="form-control"/></div></div>
+
+            <button (click)="update()"
+                    class="btn btn-primary btn-block">
+              Update
+            </button>
+
+            <h2>Sections ({{sections.length}})</h2>
+
+            <ul class="list-group">
+
+              <li *ngFor="let enrollment of sections" class="list-group-item">
+                {{enrollment.section.name}}
+                ({{enrollment.section.seats}})
+                <button class="btn btn-primary" (click)="DropClass(enrollment)">Drop Class</button>
+              </li>
+            </ul>
+
+
+          </div>

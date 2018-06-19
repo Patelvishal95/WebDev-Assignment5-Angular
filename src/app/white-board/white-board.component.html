@@ -1,0 +1,17 @@
+<div>
+  <div class="row color1">
+    <h1 class="text-white m-3">
+      White Board
+    </h1>
+    <div class="btn-group mt-3 mb-3 align-items-end align-baseline color1">
+      <a  class="btn  " *ngIf="loggedIn" routerLink="/login">Login</a>
+      <a class="btn " *ngIf="!loggedIn"  (click)="logout()"
+         routerLink="/home">Logout</a>
+      <a class="btn  " *ngIf="!loggedIn"
+         routerLink="/profile">Profile</a>
+      <a  class=" btn  " routerLink="/register">Register</a>
+      <a  class=" btn  " *ngIf="isAdmin" routerLink="/admin">Admin</a>
+    </div>
+  </div>
+  <app-course-grid ></app-course-grid>
+</div>

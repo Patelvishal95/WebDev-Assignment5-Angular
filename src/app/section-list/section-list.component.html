@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1>Sections for course: {{courseName}}</h1>
+  <a routerLink="/home">Home</a>
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item" (click)="clicked(section)">
+      {{section.name}} {{section.seats}}
+      <button *ngIf="!isAdmin&&section.seats!==0&&!isAnonymous" (click)="enroll(section)"
+              class="float-right btn btn-primary">Enroll</button>
+      <button *ngIf="isAdmin" (click)="delete(section._id)"
+              class="float-right btn btn-primary">Delete</button>
+      <button *ngIf="isAdmin" (click)="update(section)"
+              class="float-right btn btn-primary">Update</button>
+    </li>
+  </ul>
+</div>
